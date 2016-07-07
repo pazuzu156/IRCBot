@@ -1,0 +1,31 @@
+{
+	"name": "pazuzu156/ircbot",
+	"description": "IRC Chat Bot",
+	"keywords": [ "php", "irc", "bot" ],
+	"type": "library",
+	"license": "GPL2",
+	"authors": [
+		{
+			"name": "Kaleb Klein",
+			"email": "klein.jae@gmail.com",
+			"homepage": "http://www.kalebklein.com"
+		}
+	],
+	"require": {
+		"symfony/console": "3.1",
+		"vlucas/phpdotenv": "2.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pazuzu156\\IRC\\": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"scripts": {
+		"post-install-cmd": [
+			"composer dump-autoload -o",
+			"php irc env-copy"
+		],
+		"post-update-cmd": [ "composer dump-autoload -o" ]
+	}
+}

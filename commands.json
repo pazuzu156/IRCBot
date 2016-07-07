@@ -1,0 +1,20 @@
+{
+  "commands": [
+    {
+      "command": "!moo",
+      "type": "PRIVMSG",
+      "message": "I am a cow. MMMMMOOOOOO!"
+    },
+    {
+      "command": "!killbot",
+      "type": "QUIT",
+      "admin": "Pazuzu156"
+    },
+    {
+      "command": "!op",
+      "type": "OP",
+      "message": "op :channel :to",
+      "admin": "Pazuzu156"
+    }
+  ]
+}

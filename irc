@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Pazuzu156\IRC\Console\Start;
+use Pazuzu156\IRC\Console\Env;
+
+$app = new Application();
+
+$app->add(new Start);
+$app->add(new Env);
+$app->run();
