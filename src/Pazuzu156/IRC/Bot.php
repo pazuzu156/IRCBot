@@ -102,8 +102,6 @@ class Bot
             'to' => 'ChanServ',
             'message' => $message
         ]);
-
-        $this->_socket->resetRdata(353, $this->_rdata);
     }
 
     public function getCaller()
@@ -114,23 +112,6 @@ class Bot
     public function getRecipient()
     {
         return (empty($this->_data[4])) ? null : $this->_data[4];
-    }
-
-    public function isOp()
-    {
-        $this->send([
-            'action' => 'NAMES',
-            'query' => env('channel')
-        ]);
-
-        $this->_rdata = $this->_socket->getRdata()[353][0];
-        foreach($this->_rdata as $nick)
-        {
-            if($nick == '@'.$this->getCaller())
-                return true;
-        }
-
-        return false;
     }
 
     public function logout()

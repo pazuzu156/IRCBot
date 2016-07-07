@@ -15,6 +15,11 @@
       "type": "OP",
       "message": "op :channel :to",
       "admin": "Pazuzu156"
+    },
+    {
+      "command": "!poke",
+      "type": "PRIVMSG",
+      "message": ":from poked you!"
     }
   ]
 }

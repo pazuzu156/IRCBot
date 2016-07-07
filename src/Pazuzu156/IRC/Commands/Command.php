@@ -67,15 +67,10 @@ class Command
                                 $this->_bot->privateMessage("You are not allowed to issue this command!", $this->_bot->getCaller());
                             break;
                         case 'OP':
-                            if($this->_bot->isOp($this->_bot->getCaller()) || ($this->_bot->getCaller() == $command->admin))
+                            if($this->_bot->getCaller() == $command->admin)
                                 $this->_bot->op($command->message);
                             else
                                 $this->_bot->privateMessage("You are not allowed to issue this command!", $this->_bot->getCaller());
-//                            if(in_array($this->_bot->getCaller(), $command->ops))
-//                                $this->_bot->op($command->message);
-//                            else
-//                                $this->_bot->privateMessage("You are not allowed to issue this command!", $this->_bot->getCaller());
-                            //$this->_bot->op($command->message);
                             break;
                     }
                 }

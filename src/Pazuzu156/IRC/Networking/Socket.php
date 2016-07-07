@@ -12,8 +12,6 @@ class Socket
 
 	private $_console;
 
-	private $_data = array();
-
 	public function __construct($bufferSize=1024)
 	{
 		$this->_console = new ConsoleOutput;
@@ -47,25 +45,8 @@ class Socket
 		$data = trim(socket_read($this->_socket, $this->_buffer, PHP_NORMAL_READ));
 		$this->_console->writeln("$data");
 		$r = explode(' ', $data);
-		if(isset($r[1]) && is_numeric($r[1]))
-		{
-			$this->_data[$r[1]] = array($r);
-		}
 		$r = array_pad($r, 10, '');
 		return $r;
-	}
-
-	public function getRdata()
-	{
-		return $this->_data;
-	}
-
-	public function resetRdata($id, $data)
-	{
-		for($i = 0; $i < count($data); $i++)
-		{
-			$this->_data[$id][0][$i] = '@'.$data[$i];
-		}
 	}
 
 	public function isOpen()
